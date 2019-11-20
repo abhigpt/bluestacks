@@ -1,15 +1,15 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const auth = require('./auth.json');
 const googleIt = require('google-it');
 const asyncRedis = require("async-redis");
 const redisClient = asyncRedis.createClient();
 const _ = require('lodash');
+const dotenv = require('dotenv');
+dotenv.config();
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
-
 
 client.on('message', async msg => {
   if (msg.content === 'hey') {
@@ -64,4 +64,4 @@ client.on('message', async msg => {
 });
 
 
-client.login(auth.token);
+client.login(process.env.AUTH_TOKEN);
