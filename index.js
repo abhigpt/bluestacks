@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const googleIt = require('google-it');
 const asyncRedis = require("async-redis");
-const redisClient = asyncRedis.createClient(process.env.REDIS_URL, 6379);
+const redisClient = asyncRedis.createClient(process.env.REDIS_URL);
 const _ = require('lodash');
 const dotenv = require('dotenv');
 dotenv.config();
